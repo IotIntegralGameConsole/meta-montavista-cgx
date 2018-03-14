@@ -1,0 +1,14 @@
+--- git_org/Makefile	2015-10-09 14:30:40.667989926 +0530
++++ git/Makefile	2015-10-09 15:02:36.164100653 +0530
+@@ -515,8 +515,9 @@ include/config/%.conf: $(KCONFIG_CONFIG)
+ # gimmick, wrong config.mk would be included leading nasty warnings/errors.
+ ifneq ($(wildcard $(KCONFIG_CONFIG)),)
+ ifneq ($(wildcard include/config/auto.conf),)
+-autoconf_is_old := $(shell find . -path ./$(KCONFIG_CONFIG) -newer \
+-						include/config/auto.conf)
++autoconf_is_old := $(shell \
++		if [ "$(KCONFIG_CONFIG)" -nt "include/config/auto.conf" ] ; then \
++		echo "$(KCONFIG_CONFIG)"; fi)
+ ifeq ($(autoconf_is_old),)
+ include $(srctree)/config.mk
+ include $(srctree)/arch/$(ARCH)/Makefile
