@@ -39,20 +39,20 @@ Maintenance
 ===========
 
 Maintainers:
-    support@mvista.com
+    jpuhlman@mvista.com
 
 
 Contributing
 ============
 
 Contributions and patches can be sent to the MontaVista  mailing
-list: support@mvista.com"
+list: jpuhlman@mvista.com"
 
 When sending patches please take a look at the contribution guide available
 here: https://wiki.yoctoproject.org/wiki/Contribution_Guidelines
 
 example:
-git send-email -1 -M --to support@mvista.com  --subject-prefix=meta-montavista-cgx][PATCH
+git send-email -1 -M --to jpuhlman@mvista.com  --subject-prefix=meta-montavista-cgx][PATCH
 
 
 Table of Contents
@@ -93,4 +93,4 @@ II. Misc
 The layer contains a core package group (packagegroup-cgx-complete-image) that
 should aggregate all the other available package groups.
 
-The core image name is: cgx-complete-image 
+The core image name is: default-image
